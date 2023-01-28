@@ -52,6 +52,14 @@ docker tag getting-started kdango/getting-started
 # Push our image to docker hub or custom docker registry
 docker push kdango/getting-started  
 
+# Create updated docker image from a running container
+docker commit 28ed9a9fe253 getting-started-v2  
+docker commit todo-app getting-started-v2  
+(todo-app is the running container name or container id with latest changes from which to build the new docker image)  
+(getting-started-v2 is name of new docker image)  
+
+# Create new container from newly built docker image above  
+docker run -dp 3001:3000 --name todo-app-v2 getting-started-v2
 
 # Sample Output  
 dangolk@d3v ~ % docker run -it --name kubunut ubuntu   
