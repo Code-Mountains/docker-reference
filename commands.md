@@ -1,3 +1,6 @@
+# Getting Started 
+docker run -d -p 80:80 --name docker-starter docker/getting-started
+
 # View all Docker processes
 docker ps -a
 
@@ -7,11 +10,23 @@ docker run -it --name kubuntu ubuntu
 # Start a stopped container
 docker start kubuntu
 
+# Stop a running container
+docker stop kubuntu
+
 # Attach to a running container
 docker attach kubuntu
 
+# Start bash session in a running background container
+docker exec -it docker-start /bin/sh
+
 # Fetch Logs from a container
 docker logs kubuntu
+
+# Inspect container's running processes
+docker top kubuntu
+
+# Delete/Remove container
+docker remove kubuntu
 
 # Sample Output  
 dangolk@d3v ~ % docker run -it --name kubunut ubuntu   
