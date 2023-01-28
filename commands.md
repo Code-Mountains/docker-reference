@@ -29,16 +29,16 @@ docker top kubuntu
 docker remove kubuntu
 
 # Build Custom docker image (with Dockerfile on same folder as ./ )
-docker build -t getting-started .
-(-t tag image with name 'getting-started')
-(. is to instruct docker to look for Dockerfile in this folder for building image)
+docker build -t getting-started .  
+(-t tag image with name 'getting-started')  
+(. is to instruct docker to look for Dockerfile in this folder for building image)  
 
-# Run the docker image built using this image above
-docker run -dp 3000:3000 --name todo-app getting-started
-(-d run in detached mode)
-(-p bind port 3000 on host to 3000 on container)
-(--name container name as todo-app)
-(getting-started is name of docker image that was built earlier)
+# Run the docker image built using this image above  
+docker run -dp 3000:3000 --name todo-app getting-started  
+(-d run in detached mode)  
+(-p bind port 3000 on host to 3000 on container)  
+(--name container name as todo-app)  
+(getting-started is name of docker image that was built earlier)  
 
 # Sample Output  
 dangolk@d3v ~ % docker run -it --name kubunut ubuntu   
