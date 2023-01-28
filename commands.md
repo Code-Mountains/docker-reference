@@ -4,6 +4,15 @@ docker ps -a
 # Run Ubuntu docker image
 docker run -it --name kubuntu ubuntu 
 
+# Start a stopped container
+docker start kubuntu
+
+# Attach to a running container
+docker attach kubuntu
+
+# Fetch Logs from a container
+docker logs kubuntu
+
 # Sample Output  
 dangolk@d3v ~ % docker run -it --name kubunut ubuntu   
 Unable to find image 'ubuntu:latest' locally   
