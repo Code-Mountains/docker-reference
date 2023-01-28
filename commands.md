@@ -40,6 +40,19 @@ docker run -dp 3000:3000 --name todo-app getting-started
 (--name container name as todo-app)  
 (getting-started is name of docker image that was built earlier)  
 
+# Login to Docker Hub or any custom docker registry
+docker login -u kdango
+
+# Tag our custom docker image
+docker tag getting-started kdango/getting-started  
+(getting-started is source image)  
+(kdango/getting-started is target image)  
+(make sure kdango/getting-started repo is created on docker hub first, or in the custom docker registry)  
+
+# Push our image to docker hub or custom docker registry
+docker push kdango/getting-started  
+
+
 # Sample Output  
 dangolk@d3v ~ % docker run -it --name kubunut ubuntu   
 Unable to find image 'ubuntu:latest' locally   
