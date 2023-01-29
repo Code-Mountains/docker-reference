@@ -71,3 +71,10 @@ docker exec -it c-todo-app /bin/sh -c 'echo $HOSTNAME'
 docker inspect --format='{{.State.Running}}' c-todo-app  
 docker inspect --format='{{.NetworkSettings.IPAddress}}' c5fd3aead22e  
 (docker inspect <containerID>)  
+
+# Docker container with volumes
+docker run -it --name c-vol -v /home/kdango/volume:/data i-vol  
+(c-vol container name)  
+(-v /home/kdango/volume is mount point on host)  
+(-v :/data is mount point on container)  
+(i-vol is container image)  
