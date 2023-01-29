@@ -66,3 +66,8 @@ docker exec -it c-todo-app /bin/sh -c 'echo $HOSTNAME'
 (c-todo-app is container name)  
 (/bin/sh is binary or executable to run)  
 (-c 'echo $HOSTNAME' is the command to run on the shell)  
+
+# Docker inspect with formatting  
+docker inspect --format='{{.State.Running}}' c-todo-app  
+docker inspect --format='{{.NetworkSettings.IPAddress}}' c5fd3aead22e  
+(docker inspect <containerID>)  
