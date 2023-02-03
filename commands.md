@@ -81,3 +81,18 @@ docker run -it --name c-vol -v /home/kdango/volume:/data i-vol
 
 # Run Jenkins locally using docker image
 docker run -it --name c-jenkins -p 8080:8080 jenkins/jenkins:lts
+
+# Deploying a Registry Server
+# Start your registry
+docker run -d -p 5000:5000 --restart=always --name=registry regsitry:2
+
+# Tag image in the registry  
+docker tag ubuntu localhost:5000/ubuntu  
+(ubuntu is source image downloaded from hub.docker.com)  
+(localhost:5000/ubuntu is our target repository where our local docker registry is running)  
+
+# Push image to registry
+docker push localhost:5000/ubuntu
+
+# Pull image from registry
+docker pull localhost:5000/ubuntu
