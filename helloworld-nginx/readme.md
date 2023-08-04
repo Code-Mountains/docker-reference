@@ -78,3 +78,32 @@ bc09720137db: Pushed
 3dab9f8bf2d2: Pushed 
 latest: digest: sha256:6a83dc5bb96abe0b4f366323a60305e853d97159814cb9d6dbce9757729a6e58 size: 2817
 ```
+
+## Login to your Azure Container Registry (ACR)
+```
+$ docker login testacrr.azurecr.io --username testacrr
+Password: 
+WARNING! Your password will be stored unencrypted in /home/sysadmin/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+```
+
+
+## View Azure ACR Repo List:
+```
+$ az acr repository list --name testacrr.azurecr.io --output table
+The login server endpoint suffix '.azurecr.io' is automatically omitted.
+Result
+---------------------
+hello-world-nginx-app
+```
+
+## Show tags for a repo in ACR:
+```
+$ az acr repository show-tags --name testacrr --repository hello-world-nginx-app
+[
+  "latest"
+]
+```
