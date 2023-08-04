@@ -17,3 +17,20 @@ mcr.microsoft.com/mssql/server   2019-latest   330e92fa0cc2   2 months ago   1.4
 
 ## Tag this local image before pushing it off to ACR:
 docker 
+
+## View Azure ACR Repo List:
+```
+$ az acr repository list --name testacrr.azurecr.io --output table
+The login server endpoint suffix '.azurecr.io' is automatically omitted.
+Result
+---------------------
+hello-world-nginx-app
+```
+
+## Show tags for a repo in ACR:
+```
+$ az acr repository show-tags --name testacrr --repository hello-world-nginx-app
+[
+  "latest"
+]
+```
