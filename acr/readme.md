@@ -15,9 +15,6 @@ REPOSITORY                       TAG           IMAGE ID       CREATED        SIZ
 mcr.microsoft.com/mssql/server   2019-latest   330e92fa0cc2   2 months ago   1.47GB
 ```
 
-## Tag this local image before pushing it off to ACR:
-docker 
-
 ## View Azure ACR Repo List:
 ```
 $ az acr repository list --name testacrr.azurecr.io --output table
